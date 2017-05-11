@@ -9,11 +9,11 @@ var menuState = {
 		
 		
 		
-		var startLabel = game.add.text(80, game.world.height - 80,
+		var startLabel = game.add.text(80, game.world.height - 75,
 		'press the W key to play unsynchronized',
 		{font: '25px Arial', fill: '#ffffff'});
 		
-		var startLabel = game.add.text(80, game.world.height - 40,
+		var startLabel = game.add.text(80, game.world.height - 35,
 		'press the E key to play synchronized',
 		{font: '25px Arial', fill: '#ffffff'});
 		

@@ -249,4 +249,32 @@ update : function() {
 		}
 
 },
+
+deposit : function()
+{
+	console.log('Depositing $100');
+	var newBalance = balance + 100;
+	delay();
+	console.log(', new balance is ' + newBalance);
+	balance = newBalance;
+	delay();
+	balanceText.setText('Balance: $' + balance);
+	p1Count++;
+	
+		
+},
+
+withdraw : function ()
+{
+	console.log('Withdrawing $100');
+	newBalance = balance - 100;
+	delay();
+	console.log(', new balance is ' + newBalance);
+	balance = newBalance;
+	delay();
+	balanceText.setText('Balance: $' + balance);
+	p2Count++;
+	
+	
+},
 };
