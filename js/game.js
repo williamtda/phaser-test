@@ -27,16 +27,6 @@ var timerText = 0;
 
 
 
-	player2.animations.play('shootLeft');
-	bullet = game.add.sprite(player2.x, player1.y + 30, 'bullet');
-	game.physics.arcade.enable(bullet);
-	bullet.body.velocity.x = -400;
-	game.physics.arcade.collide(bullet, player1)
-	player1.animations.play('shootRight');
-	bullet = game.add.sprite(player2.x + 30, player1.y + 30, 'bullet');
-	game.physics.arcade.enable(bullet);
-	bullet.body.velocity.x = 400;
-	game.physics.arcade.collide(bullet, player2);
 function endGame() {
 	
 	game.paused = true;
