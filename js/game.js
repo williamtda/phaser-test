@@ -44,7 +44,7 @@ function endGame() {
 	{
 		endMessage = endMessage + "Player 1 Wins!";
 	}
-	if (p1Count < p2Couunt)
+	if (p1Count < p2Count)
 	{
 		endMessage = endMessage + "Player 2 Wins!";
 	}
