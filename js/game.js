@@ -78,7 +78,7 @@ function delay()
 	var timeNow = this.game.tiime.totalElapsedSeconds();
 	var delay = Math.Random();
 	
-	while ((this.game.time.totalElapsedSeconds() - timeNow) < delay))
+	while ((this.game.time.totalElapsedSeconds() - timeNow) < delay)
 	{
 		//WAIT
 	}
