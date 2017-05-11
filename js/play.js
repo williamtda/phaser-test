@@ -120,6 +120,15 @@ update : function() {
 	{
 		endGame();
 	}
+	
+	if (p1Count == 20)
+	{
+		endGame();
+	}
+	if (p2Count == 20)
+	{
+		endGame();
+	}
 	//game.physics.arcade.overlap(player2, bullet, killPlayer2, null, this);
 	
       player1.body.velocity.x = 0;
@@ -134,7 +143,7 @@ update : function() {
 		//back2.tilePosition.x+= 5;
 	
     }
-	if (Mkey.isDown && player1.x <= 157.5 && player1.y >= 287.5)
+	if (Mkey.isDown && player1.x <= 157.5 && player1.y >= 287.5 && player1.y<=400)
     {
         playState.deposit();
     }
@@ -142,7 +151,7 @@ update : function() {
 	 {
 	 if (player1.frame == 0)
 	 {
-		player1.animations.play('shootRight');
+		
 		p1ShootRight();
 		prevShot = this.game.time.totalElapsedSeconds();
 		
@@ -151,7 +160,7 @@ update : function() {
 	
 	if (player1.frame == 4)
 	 {
-		player1.animations.play('shootLeft');
+		
 		p1ShootLeft();
 		prevShot = this.game.time.totalElapsedSeconds();
     }
@@ -178,14 +187,14 @@ update : function() {
 	 {
 	 if (player2.frame = 0)
 	 {
-		player2.animations.play('shootRight');
+		
 		p2ShootRight();
 		prevShot = this.game.time.totalElapsedSeconds();
     }
 	
 	if (player2.frame = 4)
 	 {
-		player2.animations.play('shootLeft');
+		
 		p2ShootLeft();
 		prevShot = this.game.time.totalElapsedSeconds();
     }
@@ -196,7 +205,7 @@ update : function() {
     {
         player1.body.velocity.y = -400;
     }
-	if (Rkey.isDown && player2.x >= 642.5 && player2.y >= 287.5)
+	if (Rkey.isDown && player2.x >= 642.5 && player2.y >= 287.5 && player2.y<=400)
     {
         playState.withdraw();
     }
@@ -254,23 +263,24 @@ deposit : function()
 {
 	if (prevShot+.5 < this.game.time.totalElapsedSeconds())
 	{
-	console.log.apply('Depositing $100');
+	console.log('Depositing $100');
 	var newBalance = balance + 100;
-	console.log.apply(', new balance is ' + newBalance);
+	console.log(', new balance is ' + newBalance);
 	balance = newBalance;
 	balanceText.setText('Balance: $' + balance);
 	p1Count++;
 	prevShot = this.game.time.totalElapsedSeconds();
 	}
+	
 },
-//comment
+
 withdraw : function ()
 {
 	if (prevShot+.5 < this.game.time.totalElapsedSeconds())
 	{
-	console.log.apply('Withdrawing $100');
+	console.log('Withdrawing $100');
 	newBalance = balance - 100;
-	console.log.apply(', new balance is ' + newBalance);
+	console.log(', new balance is ' + newBalance);
 	balance = newBalance;
 	balanceText.setText('Balance: $' + balance);
 	p2Count++;

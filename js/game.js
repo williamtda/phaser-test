@@ -18,6 +18,8 @@ var Rkey;
 var Mkey;
 var p1Count = 0;
 var p2Count = 0;
+var S = 1;
+transactionCount = 0;
 
 //Timer
 var timer;
@@ -42,9 +44,12 @@ function endGame() {
 	{
 		endMessage = endMessage + "Player 1 Wins!";
 	}
-	else
+	if (p1Count < p2Couunt)
 	{
 		endMessage = endMessage + "Player 2 Wins!";
+	}
+	else{
+		endMessage = endMessage + "Draw\nThe Balance is 0";
 	}
 	
 	var endText = game.add.text(game.world.centerX, game.world.centerY, endMessage,{fill: '#fff' });
@@ -68,6 +73,17 @@ function endGame() {
 function render(){
 	//TODO
 	console.log('test');
+}
+//semaphore implementation
+function wait(S)
+{
+	while (S <= 0);
+	S--;
+}
+
+function signal(S)
+{
+	S++;
 }
 
 

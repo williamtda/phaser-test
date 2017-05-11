@@ -112,6 +112,11 @@ update : function() {
 	game.physics.arcade.collide(player1, bullet);
 	game.physics.arcade.collide(player1, bullet);
 	
+	if (transactionCount == 40)
+	{
+		endGame();
+	}
+	
 	if (p1Count == 20)
 	{
 		endGame();
@@ -136,7 +141,7 @@ update : function() {
     }
 	if (Mkey.isDown && player1.x <= 157.5 && player1.y >= 287.5)
     {
-        deposit();
+        playState2.deposit();
     }
 	 if (cursors.down.isDown && (prevShot+.5 < this.game.time.totalElapsedSeconds())) 
 	 {
@@ -198,7 +203,7 @@ update : function() {
     }
 	if (Rkey.isDown && player2.x >= 642.5 && player2.y >= 287.5)
     {
-        withdraw();
+        playState2.withdraw();
     }
 	
      if (Akey.isDown)
@@ -252,29 +257,40 @@ update : function() {
 
 deposit : function()
 {
-	console.log("Depositing $100");
+	wait(S);
+	if (prevShot+.5 < this.game.time.totalElapsedSeconds())
+	{
+	console.log('Depositing $100');
 	var newBalance = balance + 100;
-	delay();
-	console.log(", new balance is ", newBalance);
+	console.log(', new balance is ' + newBalance);
 	balance = newBalance;
-	delay();
 	balanceText.setText('Balance: $' + balance);
 	p1Count++;
+	transactionCount++;
+	prevShot = this.game.time.totalElapsedSeconds();
+	}
 	
-		
+	signal(S);
 },
 
 withdraw : function ()
 {
-	console.log("Withdrawing $100");
+	wait(S);
+	if (prevShot+.5 < this.game.time.totalElapsedSeconds())
+	{
+	if (balance >= 100)
+	{
+	console.log('Withdrawing $100');
 	newBalance = balance - 100;
-	delay();
-	console.log(", new balance is ", newBalance);
+	console.log(', new balance is ' + newBalance);
 	balance = newBalance;
-	delay();
 	balanceText.setText('Balance: $' + balance);
 	p2Count++;
+	transactionCount++;
+	}
+	prevShot = this.game.time.totalElapsedSeconds();
+	}
 	
-	
+	signal(S);
 },
 };
