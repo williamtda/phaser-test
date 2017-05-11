@@ -99,7 +99,7 @@ function p1ShootRight()
 function p2ShootLeft()
 {
 
-	bullet = game.add.sprite(player2.position.x, player1.position.y + 30, 'bullet');
+	bullet = game.add.sprite(player2.position.x, player2.position.y + 30, 'bullet');
 	game.physics.arcade.enable(bullet);
 	bullet.enableBody = true;
 	bullet.body.velocity.x = -400;
