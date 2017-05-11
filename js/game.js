@@ -20,6 +20,7 @@ var p1Count = 0;
 var p2Count = 0;
 var S = 1;
 transactionCount = 0;
+var waitTime = 0;
 
 //Timer
 var timer;
@@ -104,6 +105,18 @@ function p2ShootLeft()
 	bullet.enableBody = true;
 	bullet.body.velocity.x = -400;
 	//game.physics.arcade.collide(bullet, player1);
+}
+
+function wait()
+{
+	var waitTime = Math.random();
+    var begTime = this.game.time.totalElapsedSeconds();
+	var timeNow = this.game.time.totalElapsedSeconds();
+	while (timeNow  < begTime+ waitTime)
+	{
+		timeNow = this.game.time.totalElapsedSeconds();
+	}
+	
 }
 
 

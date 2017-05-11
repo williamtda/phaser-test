@@ -149,21 +149,7 @@ update : function() {
     }
 	 if (cursors.down.isDown && (prevShot+.5 < this.game.time.totalElapsedSeconds())) 
 	 {
-	 if (player1.frame == 0)
-	 {
-		
 		p1ShootRight();
-		prevShot = this.game.time.totalElapsedSeconds();
-		
-		
-    }
-	
-	if (player1.frame == 4)
-	 {
-		
-		p1ShootLeft();
-		prevShot = this.game.time.totalElapsedSeconds();
-    }
 	 }
 	 
 	
@@ -185,19 +171,7 @@ update : function() {
     }
     if (Skey.isDown && (prevShot+.5 < this.game.time.totalElapsedSeconds())) 
 	 {
-	 if (player2.frame = 0)
-	 {
-		
-		p2ShootRight();
-		prevShot = this.game.time.totalElapsedSeconds();
-    }
-	
-	if (player2.frame = 4)
-	 {
-		
-		p2ShootLeft();
-		prevShot = this.game.time.totalElapsedSeconds();
-    }
+	   p2ShootLeft();
 	 }
 	 
     //  Allow the player to jump if they are touching the ground.
@@ -261,11 +235,15 @@ update : function() {
 
 deposit : function()
 {
-	if (prevShot+.5 < this.game.time.totalElapsedSeconds())
+	var delay = Math.random();
+	if (prevShot+delay < this.game.time.totalElapsedSeconds())
 	{
 	console.log('Depositing $100');
 	var newBalance = balance + 100;
 	console.log(', new balance is ' + newBalance);
+	
+	wait();
+	
 	balance = newBalance;
 	balanceText.setText('Balance: $' + balance);
 	p1Count++;

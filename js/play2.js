@@ -250,6 +250,7 @@ update : function() {
 
 deposit : function()
 {
+	var delay = Math.random();
 	wait(S);
 	if (prevShot+.5 < this.game.time.totalElapsedSeconds())
 	{
