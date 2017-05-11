@@ -92,7 +92,7 @@ function p1ShootRight()
 	bullet = game.add.sprite(player1.body.x+30, player1.body.y + 30, 'bullet');
 	game.physics.arcade.enable(bullet);
 	bullet.body.velocity.x = 400;
-	game.physics.arcade.overlap(bullet, player2);
+	//game.physics.arcade.overlap(bullet, player2);
 }
 
 function p2ShootLeft()
@@ -101,7 +101,7 @@ function p2ShootLeft()
 	bullet = game.add.sprite(player2.x, player1.y + 30, 'bullet');
 	game.physics.arcade.enable(bullet);
 	bullet.body.velocity.x = -400;
-	game.physics.arcade.collide(bullet, player1);
+	//game.physics.arcade.collide(bullet, player1);
 }
 
 

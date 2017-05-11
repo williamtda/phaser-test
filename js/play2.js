@@ -112,19 +112,12 @@ update : function() {
 	game.physics.arcade.collide(player1, bullet);
 	game.physics.arcade.collide(player1, bullet);
 	
-	if (transactionCount == 40)
+	if (p1Count >= 20 && p2Count == 20)
 	{
 		endGame();
 	}
 	
-	if (p1Count == 20)
-	{
-		endGame();
-	}
-	if (p2Count == 20)
-	{
-		endGame();
-	}
+	
 	//game.physics.arcade.overlap(player2, bullet, killPlayer2, null, this);
 	
       player1.body.velocity.x = 0;
@@ -266,7 +259,7 @@ deposit : function()
 	balance = newBalance;
 	balanceText.setText('Balance: $' + balance);
 	p1Count++;
-	transactionCount++;
+
 	prevShot = this.game.time.totalElapsedSeconds();
 	}
 	
@@ -286,7 +279,7 @@ withdraw : function ()
 	balance = newBalance;
 	balanceText.setText('Balance: $' + balance);
 	p2Count++;
-	transactionCount++;
+
 	}
 	prevShot = this.game.time.totalElapsedSeconds();
 	}
