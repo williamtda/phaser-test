@@ -36,7 +36,7 @@ var timerText = 0;
 	bullet = game.add.sprite(player2.x + 30, player1.y + 30, 'bullet');
 	game.physics.arcade.enable(bullet);
 	bullet.body.velocity.x = 400;
-	game.physics.arcade.collide(bullet, playe
+	game.physics.arcade.collide(bullet, player2);
 function endGame() {
 	
 	game.paused = true;
@@ -83,6 +83,11 @@ function delay()
 		//WAIT
 	}
 	
+}
+
+function render(){
+	//TODO
+	console.log('test');
 }
 
 
