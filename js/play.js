@@ -252,10 +252,10 @@ update : function() {
 
 deposit : function()
 {
-	console.log("Depositing $100");
+	console.log('Depositing $100');
 	var newBalance = balance + 100;
 	delay();
-	console.log(", new balance is ", newBalance);
+	console.log(', new balance is ' + newBalance);
 	balance = newBalance;
 	delay();
 	balanceText.setText('Balance: $' + balance);
@@ -263,13 +263,13 @@ deposit : function()
 	
 		
 },
-
+//comment
 withdraw : function ()
 {
-	console.log("Withdrawing $100");
+	console.log('Withdrawing $100');
 	newBalance = balance - 100;
 	delay();
-	console.log(", new balance is ", newBalance);
+	console.log(', new balance is ' + newBalance);
 	balance = newBalance;
 	delay();
 	balanceText.setText('Balance: $' + balance);
