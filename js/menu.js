@@ -10,18 +10,18 @@ var menuState = {
 		
 		
 		var startLabel = game.add.text(80, game.world.height - 75,
-		'press the W key to play unsynchronized',
+		'press the U key to play unsynchronized',
 		{font: '25px Arial', fill: '#ffffff'});
 		
 		var startLabel = game.add.text(80, game.world.height - 35,
-		'press the E key to play synchronized',
+		'press the I key to play synchronized',
 		{font: '25px Arial', fill: '#ffffff'});
 		
-		var Wkey = game.input.keyboard.addKey(Phaser.Keyboard.W);
-		var Ekey = game.input.keyboard.addKey(Phaser.Keyboard.E);
+		var Ukey = game.input.keyboard.addKey(Phaser.Keyboard.U);
+		var Ikey = game.input.keyboard.addKey(Phaser.Keyboard.I);
 		
-		Wkey.onDown.addOnce(this.startUnsync, this);
-		Ekey.onDown.addOnce(this.startSync, this);
+		Ukey.onDown.addOnce(this.startUnsync, this);
+		Ikey.onDown.addOnce(this.startSync, this);
 	},
 	
 	startUnsync : function() {
