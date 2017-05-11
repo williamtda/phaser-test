@@ -241,9 +241,6 @@ deposit : function()
 	console.log('Depositing $100');
 	var newBalance = balance + 100;
 	console.log(', new balance is ' + newBalance);
-	
-	wait();
-	
 	balance = newBalance;
 	balanceText.setText('Balance: $' + balance);
 	p1Count++;
