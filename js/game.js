@@ -68,7 +68,7 @@ function delay()
 	var timeNow = this.game.time.totalElapsedSeconds();
 	var min = 0.1;
 	var max = 1;
-	var delay = game.rnd.frac();
+	var delay = Math.random()*(min)*(max) + 1;
 	
 	while ((this.game.time.totalElapsedSeconds() - timeNow) < delay)
 	{
