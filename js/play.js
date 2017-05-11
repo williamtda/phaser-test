@@ -256,10 +256,8 @@ deposit : function()
 	{
 	console.log.apply('Depositing $100');
 	var newBalance = balance + 100;
-	delay();
 	console.log.apply(', new balance is ' + newBalance);
 	balance = newBalance;
-	delay();
 	balanceText.setText('Balance: $' + balance);
 	p1Count++;
 	prevShot = this.game.time.totalElapsedSeconds();
@@ -272,10 +270,8 @@ withdraw : function ()
 	{
 	console.log.apply('Withdrawing $100');
 	newBalance = balance - 100;
-	delay();
 	console.log.apply(', new balance is ' + newBalance);
 	balance = newBalance;
-	delay();
 	balanceText.setText('Balance: $' + balance);
 	p2Count++;
 	prevShot = this.game.time.totalElapsedSeconds();
