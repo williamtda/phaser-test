@@ -1,7 +1,8 @@
 var menuState = {
 	
 	create : function(){
-		
+		menuMusic = game.add.audio('menuMusic');
+		menuMusic.play();
 		var backg = game.add.tileSprite(0, 0, 800, 600, 'menucover');
 		
 		//var nameLabel = game.add.text(80, 80, 'Multithreads',

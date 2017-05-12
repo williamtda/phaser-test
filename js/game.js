@@ -26,6 +26,11 @@ var timer;
 var timeLeft = 32;
 var timerText = 0;
 
+//music
+var gunMusic;
+var menuMusic;
+var moneyMusic;
+
 
 
 

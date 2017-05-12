@@ -22,6 +22,9 @@ var loadState = {
 	game.load.spritesheet('walkLeft', 'assets/walk_left.png', 32, 64);
 	game.load.image('menu', 'assets/blackbox.png', 300, 180);
 	game.load.image('menucover', 'assets/menucover.png');
+	game.load.audio('menuMusic', 'assets/determination.mp3');
+	game.load.audio('gunShot', 'assets/shot.wav');
+	game.load.audio('chaChing', 'assets/money.mp3');
 	},
 	
 	create : function() {
