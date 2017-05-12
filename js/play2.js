@@ -107,10 +107,8 @@ update : function() {
  //  Collide the player with the platforms and atms
     game.physics.arcade.collide(player1, platforms);
 	game.physics.arcade.collide(player2, platforms);
-	//game.physics.arcade.collide(player1, atms);
-	//game.physics.arcade.collide(player2, atms);
-	game.physics.arcade.collide(player1, bullet);
-	game.physics.arcade.collide(player1, bullet);
+	game.physics.arcade.overlap(bullet, player1, p1Die, null, this);
+	game.physics.arcade.overlap(bullet, player2, p2Die, null, this);
 	
 	if (p1Count >= 20 && p2Count == 20)
 	{
@@ -250,7 +248,7 @@ update : function() {
 
 deposit : function()
 {
-	var delay = Math.random();
+	
 	wait(S);
 	if (prevShot+.5 < this.game.time.totalElapsedSeconds())
 	{

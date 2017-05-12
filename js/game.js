@@ -110,7 +110,7 @@ function p1Die(){
 	try {
 		player1.kill();
 		bullet.kill();
-		var respawnTime = this.game.time.totalElapsedSeconds() + Phaser.Timer.SECOND*3;
+		var respawnTime = this.game.time.totalElapsedSeconds() + Phaser.Timer.SECOND*2;
 		game.time.events.add(respawnTime, respawnP1, this);
 	}
 	catch(err){
@@ -123,7 +123,7 @@ function p2Die(){
 	try {
 		player2.kill();
 		bullet.kill();
-		var respawnTime = this.game.time.totalElapsedSeconds() + Phaser.Timer.SECOND*3;
+		var respawnTime = this.game.time.totalElapsedSeconds() + Phaser.Timer.SECOND*2;
 		game.time.events.add(respawnTime, respawnP2, this);
 	}
 	catch(err){
