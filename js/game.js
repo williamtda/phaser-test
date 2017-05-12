@@ -1,3 +1,4 @@
+//Initializes game variables and methods
 var game = new Phaser.Game(800, 600, Phaser.CANVAS, 'gameDiv');
 
 var timeNow;
@@ -21,15 +22,11 @@ var p2Count = 0;
 var S = 1;
 var prevTransaction = 0;
 
-//Timer
-var timer;
-var timeLeft = 32;
-var timerText = 0;
-
-//music
-var gunMusic;
 var menuMusic;
 var moneyMusic;
+var gunMusic;
+
+
 
 
 
@@ -40,7 +37,7 @@ function endGame() {
 	var w = game.world.width;
 	var h = game.world.height;
 
-	// Then add the menu
+	
 	var menu = game.add.sprite(w/2, h/2, 'menu');
 	menu.anchor.setTo(0.5, 0.5);
 	
@@ -60,7 +57,7 @@ function endGame() {
 	var endText = game.add.text(game.world.centerX, game.world.centerY, endMessage,{fill: '#fff' });
 	endText.anchor.setTo(0.5,0.5);
 
-	// And a label to illustrate which menu item was chosen. (This is not necessary)
+	// And a label to illustrate which menu item was chosen.
 	var choiceLabel = game.add.text(game.world.centerX, game.world.centerY + menu.height/2+30, 'Click here to restart', {fill: '#000000' });
 	choiceLabel.anchor.setTo(0.5, 0.5);
 
@@ -75,10 +72,7 @@ function endGame() {
 
 
 
-function render(){
-	//TODO
-	console.log('test');
-}
+
 //semaphore implementation
 function wait(S)
 {

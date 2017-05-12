@@ -1,13 +1,11 @@
+//The Main Menu
 var menuState = {
 	
 	create : function(){
-		
+		menuMusic = game.add.audio('menuMusic');
+		menuMusic.play();
 		var backg = game.add.tileSprite(0, 0, 800, 600, 'menucover');
-		
-		//var nameLabel = game.add.text(80, 80, 'Multithreads',
-		//{font: '50px Arial', fill: '#ffffff'});
-		
-		
+				
 		
 		var startLabel = game.add.text(80, game.world.height - 75,
 		'press the U key to play unsynchronized',
