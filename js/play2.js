@@ -2,7 +2,7 @@ var playState2 = {
 create : function() {
 	
 	menuMusic = game.add.audio('menuMusic');
-		menuMusic.play();
+
 		gunMusic = game.add.audio('gunMusic');
 	moneyMusic = game.add.audio('moneyMusic');
 	

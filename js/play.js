@@ -4,7 +4,7 @@ create : function() {
 	menuMusic = game.add.audio('menuMusic');
 	gunMusic = game.add.audio('gunMusic');
 	moneyMusic = game.add.audio('moneyMusic');
-		menuMusic.play();
+	
 	
 	back2 = game.add.tileSprite(0, 0, 800, 600, 'background');
 
