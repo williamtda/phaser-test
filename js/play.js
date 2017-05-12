@@ -99,10 +99,11 @@ update : function() {
     game.physics.arcade.collide(player1, platforms);
 	game.physics.arcade.collide(player2, platforms);
 
-	game.physics.arcade.collide(player1, bullet);
-	game.physics.arcade.collide(player1, bullet);
+	//game.physics.arcade.collide(player1, bullet);
+	//game.physics.arcade.collide(player1, bullet);
 	
 	game.physics.arcade.overlap(bullet, player1, p1Die, null, this);
+	game.physics.arcade.overlap(bullet, player2, p2Die, null, this);
 	
 	if (p1Count == 20)
 	{

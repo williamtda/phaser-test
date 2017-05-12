@@ -119,6 +119,19 @@ function p1Die(){
 	
 }
 
+function p2Die(){
+	try {
+		player2.kill();
+		bullet.kill();
+		var respawnTime = this.game.time.totalElapsedSeconds() + Phaser.Timer.SECOND*3;
+		game.time.events.add(respawnTime, respawnP2, this);
+	}
+	catch(err){
+		
+	}
+	
+}
+
 function respawnP1(){
 	player1 = game.add.sprite(400, 100, 'businessmoney');
 	game.physics.arcade.enable(player1);
@@ -129,6 +142,13 @@ function respawnP1(){
 	player1.animations.add('right', [0, 1, 2, 3], 7, true); 
 }
 function respawnP2(){
+	player2 = game.add.sprite(400, 100, 'businessmoney');
+	game.physics.arcade.enable(player2);
+	player2.body.bounce.y = 0.2;
+    player2.body.gravity.y = 400;
+    player2.body.collideWorldBounds = true;
+	player2.animations.add('left', [4, 5, 6, 7], 7, true);
+	player2.animations.add('right', [0, 1, 2, 3], 7, true); 
 	
 }
 
@@ -140,6 +160,6 @@ game.state.add('load', loadState);
 game.state.add('menu', menuState);
 game.state.add('play', playState);
 game.state.add('play2', playState2);
-//game.state.add('win', winState);
+
 
 game.state.start('boot');
