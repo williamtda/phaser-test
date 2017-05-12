@@ -115,7 +115,7 @@ update : function() {
 	{
 		endGame();
 	}
-	if (p1Count >= 20)
+	if (p2Count >= 20)
 	{
 		endGame();
 	}
