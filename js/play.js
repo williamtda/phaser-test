@@ -1,6 +1,11 @@
 var playState = { 
 create : function() {
 	
+	menuMusic = game.add.audio('menuMusic');
+	gunMusic = game.add.audio('gunMusic');
+	moneyMusic = game.add.audio('moneyMusic');
+		menuMusic.play();
+	
 	back2 = game.add.tileSprite(0, 0, 800, 600, 'background');
 
     //  The platforms group contains the ground and the 2 ledges we can jump on
@@ -142,6 +147,7 @@ update : function() {
     }
 	 if (cursors.down.isDown && (prevShot+.5 < this.game.time.totalElapsedSeconds())) 
 	 {
+		 gunMusic.play();
 		p1ShootRight();
 		prevShot = this.game.time.totalElapsedSeconds();
 	 }
@@ -165,6 +171,7 @@ update : function() {
     }
     if (Skey.isDown && (prevShot+.5 < this.game.time.totalElapsedSeconds())) 
 	 {
+		 gunMusic.play();
 	   p2ShootLeft();
 	   prevShot = this.game.time.totalElapsedSeconds();
 	 }
@@ -233,6 +240,7 @@ deposit : function()
   
 	if (prevTransaction+.5 < this.game.time.totalElapsedSeconds())
 	{
+	moneyMusic.play();
 	console.log('Depositing $100');
 	var newBalance = balance + 100;
 	console.log(', new balance is ' + newBalance);
@@ -249,6 +257,7 @@ withdraw : function ()
 	
 	if (prevTransaction+.5 < this.game.time.totalElapsedSeconds())
 	{
+	moneyMusic.play();
 	console.log('Withdrawing $100');
 	newBalance = balance - 100;
 	console.log(', new balance is ' + newBalance);

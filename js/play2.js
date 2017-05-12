@@ -1,6 +1,11 @@
 var playState2 = { 
 create : function() {
 	
+	menuMusic = game.add.audio('menuMusic');
+		menuMusic.play();
+		gunMusic = game.add.audio('gunMusic');
+	moneyMusic = game.add.audio('moneyMusic');
+	
 	back2 = game.add.tileSprite(0, 0, 800, 600, 'background');
 	balance = 2000;
 
@@ -139,23 +144,12 @@ update : function() {
     {
         playState2.deposit();
     }
-	 if (cursors.down.isDown && (prevShot+.5 < this.game.time.totalElapsedSeconds())) 
+	 
+	  if (cursors.down.isDown && (prevShot+.5 < this.game.time.totalElapsedSeconds())) 
 	 {
-	 if (player1.frame == 0)
-	 {
-		player1.animations.play('shootRight');
+		 gunMusic.play();
 		p1ShootRight();
 		prevShot = this.game.time.totalElapsedSeconds();
-		
-		
-    }
-	
-	if (player1.frame == 4)
-	 {
-		player1.animations.play('shootLeft');
-		p1ShootLeft();
-		prevShot = this.game.time.totalElapsedSeconds();
-    }
 	 }
 	 
 	
@@ -177,19 +171,9 @@ update : function() {
     }
     if (Skey.isDown && (prevShot+.5 < this.game.time.totalElapsedSeconds())) 
 	 {
-	 if (player2.frame = 0)
-	 {
-		player2.animations.play('shootRight');
-		p2ShootRight();
-		prevShot = this.game.time.totalElapsedSeconds();
-    }
-	
-	if (player2.frame = 4)
-	 {
-		player2.animations.play('shootLeft');
-		p2ShootLeft();
-		prevShot = this.game.time.totalElapsedSeconds();
-    }
+		 gunMusic.play();
+	   p2ShootLeft();
+	   prevShot = this.game.time.totalElapsedSeconds();
 	 }
 	 
     //  Allow the player to jump if they are touching the ground.
