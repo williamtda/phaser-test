@@ -19,8 +19,7 @@ var Mkey;
 var p1Count = 0;
 var p2Count = 0;
 var S = 1;
-transactionCount = 0;
-
+var prevTransaction = 0;
 
 //Timer
 var timer;

@@ -237,7 +237,7 @@ update : function() {
 
 deposit : function()
 {
-var prevTransaction = 0;
+  
 	if (prevTransaction+.4 < this.game.time.totalElapsedSeconds())
 	{
 	console.log('Depositing $100');
@@ -253,7 +253,7 @@ var prevTransaction = 0;
 
 withdraw : function ()
 {
-	var prevTransaction = 0;
+	
 	if (prevTransaction+.4 < this.game.time.totalElapsedSeconds())
 	{
 	console.log('Withdrawing $100');
