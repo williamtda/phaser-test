@@ -103,9 +103,30 @@ function p2ShootLeft()
 	game.physics.arcade.enable(bullet);
 	bullet.enableBody = true;
 	bullet.body.velocity.x = -400;
-	//game.physics.arcade.collide(bullet, player1);
+	game.physics.arcade.overlap(bullet, player1, p1Die, null, this);
 }
 
+function p1Die(){
+	try {
+		player1.kill()
+	}
+	catch(err){
+		
+	}
+}
+
+function respawnP1(){
+	player1 = game.add.sprite(400, 100, 'businessmoney');
+	game.physics.arcade.enable(player1);
+	player1.body.bounce.y = 0.2;
+    player1.body.gravity.y = 400;
+    player1.body.collideWorldBounds = true;
+	player1.animations.add('left', [4, 5, 6, 7], 7, true);
+	player1.animations.add('right', [0, 1, 2, 3], 7, true); 
+}
+function respawnP2(){
+	
+}
 
 
 

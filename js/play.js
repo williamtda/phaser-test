@@ -44,8 +44,7 @@ create : function() {
     // The player and its settings
     player1 = game.add.sprite(32, game.world.height - 150, 'businessmoney');
 	player2 = game.add.sprite(650, game.world.height - 150, 'businessmoney');
-	//player1.frame = 1;
-	//player2.frame = 1;
+
 
     //  We need to enable physics on the players
     game.physics.arcade.enable(player1);
@@ -59,11 +58,9 @@ create : function() {
      // Our animations
 	player1.animations.add('left', [4, 5, 6, 7], 7, true);
 	player1.animations.add('right', [0, 1, 2, 3], 7, true); 
-	player1.animations.add('shootLeft', [0, 1, 2], 2, true);
-	player1.animations.add('shootRight', [0, 1, 2], 2, true); 
-	player1.animations.add('dieLeft', [0, 1, 2], 2, true);
-	player1.animations.add('dieRight', [0, 1, 2], 2, true); 
+
 	
+
 	
 	 // Player2 physics properties. Give the little guy a slight bounce.
     player2.body.bounce.y = 0.2;
@@ -73,21 +70,15 @@ create : function() {
     //  Our animations
 	player2.animations.add('left', [4, 5, 6, 7], 7, true);
 	player2.animations.add('right', [0, 1, 2, 3], 7, true); 
-	player2.animations.add('shootLeft', [0, 1, 2], 2, true);
-	player2.animations.add('shootRight', [0, 1, 2], 2, true); 
-	player2.animations.add('dieLeft', [0, 1, 2], 2, true);
-	player2.animations.add('dieRight', [0, 1, 2], 2, true); 
+	
+	
  
 
 
-    //  The score
+    //  The balance
     balanceText = game.add.text(16, 16, 'Balance: $0', { fontSize: '32px', fill: '#000' });
 	
-	//The Time left
-	//timerText = game.add.text(670, 13, 'Time: 32', { fontSize: '32px', fill: '#000' });
-	//timer = game.time.create(false);
-	//timer.loop(1000, updateTimer, this);
-	//timer.start();
+
 	
 
     //  Our controls.
