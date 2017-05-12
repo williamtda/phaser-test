@@ -241,6 +241,7 @@ deposit : function()
 	wait(S);
 	if (prevTransaction+.5 < this.game.time.totalElapsedSeconds())
 	{
+	moneyMusic.play();
 	console.log('Depositing $100');
 	var newBalance = balance + 100;
 	console.log(', new balance is ' + newBalance);
@@ -261,6 +262,7 @@ withdraw : function ()
 	{
 	if (balance >= 100)
 	{
+		moneyMusic.play();
 	console.log('Withdrawing $100');
 	newBalance = balance - 100;
 	console.log(', new balance is ' + newBalance);
