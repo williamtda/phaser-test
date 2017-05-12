@@ -103,16 +103,20 @@ function p2ShootLeft()
 	game.physics.arcade.enable(bullet);
 	bullet.enableBody = true;
 	bullet.body.velocity.x = -400;
-	game.physics.arcade.overlap(bullet, player1, p1Die, null, this);
+	
 }
 
 function p1Die(){
 	try {
-		player1.kill()
+		player1.kill();
+		bullet.kill();
+		var respawnTime = this.game.time.totalElapsedSeconds() + Phaser.Timer.SECOND*3;
+		game.time.events.add(respawnTime, respawnP1, this);
 	}
 	catch(err){
 		
 	}
+	
 }
 
 function respawnP1(){
