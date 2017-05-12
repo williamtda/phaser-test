@@ -82,7 +82,7 @@ create : function() {
 
 
     //  The score
-    balanceText = game.add.text(16, 16, 'Balance: $0', { fontSize: '32px', fill: '#000' });
+    balanceText = game.add.text(16, 16, 'Balance: $2000', { fontSize: '32px', fill: '#000' });
 	
 	//The Time left
 	//timerText = game.add.text(670, 13, 'Time: 32', { fontSize: '32px', fill: '#000' });

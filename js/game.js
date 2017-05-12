@@ -54,7 +54,7 @@ function endGame() {
 		endMessage = endMessage + "Player 2 Wins!";
 	}
 	else{
-		endMessage = endMessage + "Draw\nThe Balance is 0";
+		endMessage = endMessage + "Draw";
 	}
 	
 	var endText = game.add.text(game.world.centerX, game.world.centerY, endMessage,{fill: '#fff' });
