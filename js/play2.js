@@ -2,6 +2,7 @@ var playState2 = {
 create : function() {
 	
 	back2 = game.add.tileSprite(0, 0, 800, 600, 'background');
+	balance = 2000;
 
     //  The platforms group contains the ground and the 2 ledges we can jump on
     platforms = game.add.group();
@@ -110,7 +111,11 @@ update : function() {
 	game.physics.arcade.overlap(bullet, player1, p1Die, null, this);
 	game.physics.arcade.overlap(bullet, player2, p2Die, null, this);
 	
-	if (p1Count >= 20 && p2Count == 20)
+	if (p1Count >= 20)
+	{
+		endGame();
+	}
+	if (p1Count >= 20)
 	{
 		endGame();
 	}
@@ -250,7 +255,7 @@ deposit : function()
 {
 	
 	wait(S);
-	if (prevShot+.5 < this.game.time.totalElapsedSeconds())
+	if (prevTransaction+.5 < this.game.time.totalElapsedSeconds())
 	{
 	console.log('Depositing $100');
 	var newBalance = balance + 100;
@@ -259,7 +264,7 @@ deposit : function()
 	balanceText.setText('Balance: $' + balance);
 	p1Count++;
 
-	prevShot = this.game.time.totalElapsedSeconds();
+	prevTransaction = this.game.time.totalElapsedSeconds();
 	}
 	
 	signal(S);
@@ -268,7 +273,7 @@ deposit : function()
 withdraw : function ()
 {
 	wait(S);
-	if (prevShot+.5 < this.game.time.totalElapsedSeconds())
+	if (prevTransaction+.5 < this.game.time.totalElapsedSeconds())
 	{
 	if (balance >= 100)
 	{
@@ -280,7 +285,7 @@ withdraw : function ()
 	p2Count++;
 
 	}
-	prevShot = this.game.time.totalElapsedSeconds();
+	prevTransaction = this.game.time.totalElapsedSeconds();
 	}
 	
 	signal(S);
